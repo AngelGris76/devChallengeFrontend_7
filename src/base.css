@@ -37,4 +37,5 @@
 body {
 	font-family: 'Raleway', Arial, sans-serif;
 	background-color: var(--very-dark-blue-gray);
+	color: var(--very-light-gray);
 }
