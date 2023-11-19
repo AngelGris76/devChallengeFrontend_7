@@ -1,0 +1,40 @@
+@font-face {
+	font-family: Raleway;
+	src: url('/assets/fonts/Raleway-Medium.woff') format(woff);
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url('/assets/fonts/Raleway-SemiBold.woff') format(woff);
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url('/assets/fonts/Raleway-Bold.woff') format(woff);
+	font-weight: 700;
+}
+
+:root {
+	--very-dark-blue-gray: rgb(16 14 29);
+	--dark-blue-gray: rgb(30 33 58);
+	--very-dark-gray: rgb(88 86 118);
+	--dark-gray: rgb(110 112 122);
+	--gray: rgb(136 134 157);
+	--light-gray: rgb(160 159 177);
+	--very-light-gray: rgb(231 231 235);
+	--transparent-white: rgb(255 255 255 / 0.3);
+	--light-yellow: rgb(255 236 101);
+}
+
+/*
+* {
+	box-sizing: border-box;
+}
+
+*/
+body {
+	font-family: 'Raleway', Arial, sans-serif;
+	background-color: var(--very-dark-blue-gray);
+}
