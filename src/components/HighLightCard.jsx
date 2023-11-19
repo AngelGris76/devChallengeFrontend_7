@@ -1,3 +1,6 @@
+import { Arrow } from './icons/Arrow';
+import './HighLightCard.css';
+
 export const HighLightCard = ({ data, ...props }) => {
 	const windDirection = props.windDirection;
 
@@ -5,7 +8,13 @@ export const HighLightCard = ({ data, ...props }) => {
 		<section>
 			<p>{data}</p>
 			{windDirection && (
-				<p>
+				<p className='windDirection'>
+					<span
+						className='windArrow'
+						style={{ transform: `rotateZ(${windDirection}deg)` }}
+					>
+						<Arrow width='80%' height='80%' />
+					</span>
 					<span>{windDirection}</span>
 				</p>
 			)}

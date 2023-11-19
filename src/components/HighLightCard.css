@@ -1,0 +1,16 @@
+.windDirection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.windArrow {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	aspect-ratio: 1 / 1;
+	background-color: var(--transparent-white);
+	border-radius: 50%;
+}
