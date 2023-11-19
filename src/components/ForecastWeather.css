@@ -1,0 +1,14 @@
+.forecastWeather {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+/*
+@media (min-width: 600px) {
+	.forecastWeather {
+		grid-row: 1 / 2;
+	}
+}
+*/
