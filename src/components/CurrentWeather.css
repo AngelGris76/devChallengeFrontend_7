@@ -1,10 +1,51 @@
 .currentWeather {
+	padding-bottom: 4rem;
 	grid-row: 1 / 3;
 	display: flex;
 	flex-direction: column-reverse;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2rem;
+	min-height: 100vh;
+
+	font-weight: 600;
+
+	color: var(--light-gray);
+	background-color: var(--dark-blue-gray);
+}
+
+.currentWeather__description {
+	margin: 3rem 0;
+	font-size: 2.25rem;
+}
+
+.currentWeather__date {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.2rem;
+	margin: 0;
+	font-weight: 500;
+	font-size: 1.15rem;
+}
+
+.currentWeather__city {
+	margin: 0;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	min-height: 100vh;
-	background-color: var(--dark-blue-gray);
+
+	font-size: 1.15rem;
+}
+
+.currentWeather__temperatureValue {
+	font-weight: 500;
+	font-size: 9rem;
+
+	color: var(--very-light-gray);
+}
+
+.currentWeather__temperatureUnit {
+	font-size: 3rem;
 }
