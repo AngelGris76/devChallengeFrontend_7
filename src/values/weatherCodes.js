@@ -5,7 +5,7 @@ import { PartlyCloudy } from '../components/icons/PartlyCloudy';
 import { RainHeavy } from '../components/icons/RainHeavy';
 import { RainLightModerate } from '../components/icons/RainLightModerate';
 
-export const weatherCodes = {
+export const WEATHER_CODES = {
 	0: {
 		description: 'Clear sky',
 		icon: ClearSky,
