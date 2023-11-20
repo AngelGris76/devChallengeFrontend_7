@@ -1,0 +1,15 @@
+.highLightArticle {
+	padding: 2rem;
+}
+
+.highLightContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+
+@media (min-width: 800px) {
+	.highLightContainer {
+		grid-template-columns: 1fr 1fr;
+	}
+}

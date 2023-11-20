@@ -1,11 +1,11 @@
-import { weatherCodes } from '../values/weatherCodes';
+import { WEATHER_CODES } from '../values/weatherCodes';
 import './DayCard.css';
 
 export const DayCard = ({ dayInfo }) => {
 	const today = Date.now();
 	const actualDay = Date.parse(`${dayInfo.date}T00:00`);
 
-	const Icon = weatherCodes[dayInfo.weatherCode].icon;
+	const Icon = WEATHER_CODES[dayInfo.weatherCode].icon;
 
 	// miliseconds in one hour
 	const hours = 3600000;
@@ -20,10 +20,10 @@ export const DayCard = ({ dayInfo }) => {
 	return (
 		<section className='dayCard'>
 			<p>{stringDate}</p>
-			<Icon width='48' height='48' />
-			<p>
-				<span>{dayInfo.minTemp}</span>
-				<span>{dayInfo.maxTemp}</span>
+			<Icon width='5rem' height='5rem' />
+			<p className='dayCard__temp'>
+				<span>{dayInfo.maxTemp}°C</span>
+				<span className='dayCard__minTemp'>{dayInfo.minTemp}°C</span>
 			</p>
 		</section>
 	);

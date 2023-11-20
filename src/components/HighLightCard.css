@@ -1,4 +1,36 @@
-.windDirection {
+.highLightCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 1rem 2rem;
+	height: 12.75rem;
+	background-color: var(--dark-blue-gray);
+}
+
+.highLightCard__title,
+.highLightCard__data,
+.highLightCard__windDirection {
+	margin: 0;
+}
+
+.highLightCard__title {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.highLightCard__value {
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.highLightCard__unit {
+	font-size: 2.25rem;
+	font-weight: 500;
+}
+
+.highLightCard__windDirection {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -13,4 +45,39 @@
 	aspect-ratio: 1 / 1;
 	background-color: var(--transparent-white);
 	border-radius: 50%;
+}
+
+.humidityBar {
+	width: 100%;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--light-gray);
+}
+
+.humidityBar__value {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: 0 0;
+}
+
+.humidityBar__container {
+	height: 0.5rem;
+	width: 100%;
+	margin: 0.2rem 0;
+	overflow: hidden;
+	background-color: var(--very-light-gray);
+	border-radius: 0.25rem;
+}
+
+.humidityBar__porcentaje {
+	display: block;
+	height: 100%;
+	background-color: var(--light-yellow);
+}
+
+.humidityBar__unit {
+	position: relative;
+	right: calc(-100% + 0.8rem);
 }

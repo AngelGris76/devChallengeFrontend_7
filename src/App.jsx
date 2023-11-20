@@ -21,12 +21,14 @@ const App = () => {
 	const forecastWeather = getListWeather({ weather });
 	const todayWeather = weather.info?.current || {};
 
-	// console.log(forecastWeather);
-
 	return (
 		<main className='mainContainer'>
 			<header className='header'>
-				<button type='button' onClick={handleSearchClick}>
+				<button
+					className='header__button'
+					type='button'
+					onClick={handleSearchClick}
+				>
 					Search for places
 				</button>
 			</header>

@@ -1,5 +1,23 @@
 .header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: var(--header-height);
+	padding-left: 0.8rem;
 	background-color: var(--dark-blue-gray);
+}
+
+.header__button {
+	padding: 0.7rem 1rem;
+	color: var(--very-light-gray);
+	background-color: var(--dark-gray);
+	border: none;
+}
+
+@media (min-width: 600px) {
+	.header {
+		padding-left: 3rem;
+	}
 }
 
 .mainContainer,

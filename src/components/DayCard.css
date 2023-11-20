@@ -1,3 +1,22 @@
 .dayCard {
-	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 11rem;
+
+	font-weight: 500;
+	background-color: var(--dark-blue-gray);
+}
+
+.dayCard__temp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.dayCard__minTemp {
+	color: var(--light-gray);
 }

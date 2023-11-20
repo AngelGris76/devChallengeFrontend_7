@@ -26,14 +26,15 @@
 	--very-light-gray: rgb(231 231 235);
 	--transparent-white: rgb(255 255 255 / 0.3);
 	--light-yellow: rgb(255 236 101);
+	--header-height: 5rem;
 }
 
-/*
-* {
-	box-sizing: border-box;
+@media (min-width: 600px) {
+	:root {
+		--header-height: 8.4rem;
+	}
 }
 
-*/
 body {
 	font-family: 'Raleway', Arial, sans-serif;
 	background-color: var(--very-dark-blue-gray);

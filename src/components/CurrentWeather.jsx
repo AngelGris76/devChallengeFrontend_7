@@ -1,12 +1,12 @@
-import { weatherCodes } from '../values/weatherCodes';
-import './CurrentWeather.css';
+import { WEATHER_CODES } from '../values/weatherCodes';
 import { LocationPin } from './icons/LocationPin';
+import './CurrentWeather.css';
 
 export const CurrentWeather = ({ todayWeather, city }) => {
 	const today = new Date(todayWeather.time).toUTCString().slice(0, 11);
 	const weatherDescription =
-		weatherCodes[todayWeather.weather_code].description;
-	const Icon = weatherCodes[todayWeather.weather_code].icon;
+		WEATHER_CODES[todayWeather.weather_code].description;
+	const Icon = WEATHER_CODES[todayWeather.weather_code].icon;
 
 	return (
 		<article className='currentWeather'>
@@ -17,7 +17,6 @@ export const CurrentWeather = ({ todayWeather, city }) => {
 				<span>{city}</span>
 			</p>
 			<p className='currentWeather__date'>
-				{/*	{`Today - ${today}`} */}
 				<span>Today</span>
 				<span>-</span>
 				<span>{today}</span>
