@@ -5,6 +5,8 @@ export const DayCard = ({ dayInfo }) => {
 	const today = Date.now();
 	const actualDay = Date.parse(`${dayInfo.date}T00:00`);
 
+	console.log(dayInfo.weatherCode);
+
 	const Icon = WEATHER_CODES[dayInfo.weatherCode].icon;
 
 	// miliseconds in one hour
