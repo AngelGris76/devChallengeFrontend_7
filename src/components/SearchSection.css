@@ -1,12 +1,11 @@
 .searchDialog {
 	position: absolute;
 	z-index: 1;
-	left: 0;
+	right: 100%;
 	top: 0;
 	width: 100%;
 	min-height: 100vh;
 
-	/* padding: .7rem 2rem 0 2rem; */
 	padding: 0.7rem clamp(0.7rem, 5% - 3rem, 3rem);
 
 	display: flex;
@@ -17,6 +16,12 @@
 
 	color: var(--very-light-gray);
 	background-color: var(--dark-blue-gray);
+
+	transition: transform 1s;
+}
+
+.moved {
+	transform: translateX(100%);
 }
 
 @media (min-width: 600px) {
