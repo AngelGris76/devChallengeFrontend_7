@@ -1,12 +1,14 @@
 import { useCities } from '../hooks/useCities';
 import { SearchBar } from './SearchBar';
+import { Spinner } from './Spinner';
 import './SearchSection.css';
 
 export const SearchSection = ({ handleClose, geoLocSetter }) => {
 	const { cities, searching, refreshCities } = useCities();
 
 	const handleSearchCities = (ev) => {
-		const newSearchCities = ev.target.parentElement.firstChild.value;
+		ev.preventDefault();
+		const newSearchCities = ev.target.searchCity.value;
 		refreshCities({ cityName: newSearchCities });
 	};
 
@@ -20,14 +22,17 @@ export const SearchSection = ({ handleClose, geoLocSetter }) => {
 
 	const buttonsToRender = cities.map((city) => (
 		<button
+			className='cityButton'
 			type='button'
 			key={city.id}
 			onClick={() => {
 				handleCityButton({ cityID: city.id });
 			}}
 		>
-			<span>{city.name}</span>
-			<span>{`${city.admin1} ${city.country}`} </span>
+			<span className='cityButton__name'>{city.name}</span>
+			<span className='cityButton__country'>
+				{`${city.admin1} ${city.country}`}{' '}
+			</span>
 		</button>
 	));
 
@@ -41,8 +46,20 @@ export const SearchSection = ({ handleClose, geoLocSetter }) => {
 				X
 			</button>
 			<SearchBar onClick={handleSearchCities} />
-			{!!cities.length && !searching && <section>{buttonsToRender}</section>}
-			{searching && <p className='searchingSnipet'>Searching cities...</p>}
+			{!!cities.length && !searching && (
+				<section className='citiesContainer'>{buttonsToRender}</section>
+			)}
+			{searching && (
+				<Spinner
+					width='3rem'
+					height='3rem'
+					backgroundColor='transparent'
+					borderWidth='4px'
+					borderStyle='solid'
+					spinnerColor='var(--medium-gray)'
+					spinnerCursorColor='var(--light-blue)'
+				/>
+			)}
 		</div>
 	);
 };

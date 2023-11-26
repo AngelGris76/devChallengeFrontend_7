@@ -34,3 +34,40 @@
 	background-color: transparent;
 	border: 1px solid var(--very-light-gray);
 }
+
+.citiesContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+	width: 100%;
+}
+
+.cityButton {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+	width: 100%;
+	height: 4rem;
+	padding-left: 1.5rem;
+
+	color: var(--very-light-gray);
+	background-color: transparent;
+
+	border: 1px solid var(--medium-gray);
+	outline: none;
+}
+
+.cityButton:hover {
+	cursor: pointer;
+}
+
+.cityButton__name {
+	font-weight: 500;
+}
+
+.cityButton__country {
+	font-size: 0.7rem;
+}

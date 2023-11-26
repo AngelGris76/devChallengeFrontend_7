@@ -4,6 +4,7 @@ import { SearchSection } from './components/SearchSection';
 import { ForecastWeather } from './components/ForecastWeather';
 import { CurrentWeather } from './components/CurrentWeather';
 import { TodayHighLight } from './components/TodayHighLight';
+import { Spinner } from './components/Spinner';
 import './App.css';
 
 const App = () => {
@@ -43,7 +44,17 @@ const App = () => {
 				/>
 			)}
 			{weather.searching ? (
-				<p>searching weather...</p>
+				<div className='spinnerContainer'>
+					<Spinner
+						width='3rem'
+						height='3rem'
+						borderWidth='0.25rem'
+						borderStyle='solid'
+						backgroundColor='transparent'
+						spinnerColor='var(--medium-gray)'
+						spinnerCursorColor='var(--light-blue)'
+					/>
+				</div>
 			) : (
 				<section className='infoContainer'>
 					<CurrentWeather todayWeather={todayWeather} city={city} />
