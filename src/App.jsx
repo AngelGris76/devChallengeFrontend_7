@@ -9,7 +9,8 @@ import './App.css';
 
 const App = () => {
 	const [showSearch, setShowSearch] = useState(false);
-	const { city, weather, setWeather, setGeoLoc } = useWeather();
+	const { city, forecastWeather, todayWeather, searching, loadWeather } =
+		useWeather();
 
 	const handleSearchClick = () => {
 		setShowSearch(true);
@@ -18,9 +19,6 @@ const App = () => {
 	const handleClose = () => {
 		setShowSearch(false);
 	};
-
-	const forecastWeather = getListWeather({ weather });
-	const todayWeather = weather.info?.current || {};
 
 	return (
 		<main className='mainContainer'>
@@ -37,13 +35,12 @@ const App = () => {
 				<SearchSection
 					handleClose={handleClose}
 					geoLocSetter={(geoLocData) => {
-						setGeoLoc(geoLocData);
-						setWeather((prevValue) => ({ ...prevValue, searching: true }));
+						loadWeather(geoLocData);
 						setShowSearch(false);
 					}}
 				/>
 			)}
-			{weather.searching ? (
+			{searching ? (
 				<div className='spinnerContainer'>
 					<Spinner
 						width='3rem'
@@ -67,40 +64,3 @@ const App = () => {
 };
 
 export default App;
-
-/**
- *
- * @param {object} weatherRequest
- * @param {{}} weatherRequest.weather - weather info
- * @param {number} weatherRequest.dayIndex - day index from 0 (0 is today weather) to 6
- * @returns {{date:string, minTemp:number, maxTemp:number, weatherCode:number}} - object with weather
- * info for giving day
- */
-const getWeatherByDay = ({ weather, dayIndex }) => {
-	const date = weather.daily.time[dayIndex];
-	const minTemp = weather.daily.temperature_2m_min[dayIndex];
-	const maxTemp = weather.daily.temperature_2m_max[dayIndex];
-	const weatherCode = weather.daily.weather_code[dayIndex];
-	return { date, minTemp, maxTemp, weatherCode };
-};
-
-/**
- *
- * @param {object} weatherRequest
- * @param {{}} weatherRequest.weather - weather info from api
- * @returns {[]} - list of weather
- */
-
-const getListWeather = ({ weather }) => {
-	const forecastWeather = [];
-
-	if (Object.hasOwn(weather.info, 'daily')) {
-		for (let index = 1; index < weather.info.daily.time.length; index++) {
-			forecastWeather.push(
-				getWeatherByDay({ weather: weather.info, dayIndex: index }),
-			);
-		}
-	}
-
-	return [...forecastWeather];
-};
