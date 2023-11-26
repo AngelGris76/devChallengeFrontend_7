@@ -1,12 +1,6 @@
 .forecastWeather {
-	padding: 2rem;
+	padding: 2rem clamp(0.7rem, calc(16vw - 10rem), 10rem);
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	gap: 1rem;
-}
-
-@media (min-width: 1200px) {
-	.forecastWeather {
-		padding: 2rem 14vw;
-	}
 }

@@ -4,7 +4,8 @@
 	justify-content: flex-start;
 	align-items: center;
 	gap: 0.8rem;
-	padding: 1rem 2rem;
+	padding: 1rem clamp(0.7rem, 2.5vw, 2rem);
+
 	height: 12.75rem;
 	background-color: var(--dark-blue-gray);
 }

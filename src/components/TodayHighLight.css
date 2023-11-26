@@ -1,11 +1,5 @@
 .highLightArticle {
-	padding: 2rem;
-}
-
-@media (min-width: 1200px) {
-	.highLightArticle {
-		padding: 2rem 14vw;
-	}
+	padding: 2rem clamp(0.7rem, calc(16vw - 10rem), 10rem);
 }
 
 .highLightContainer {

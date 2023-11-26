@@ -41,8 +41,7 @@ export const SearchSection = ({ handleClose, geoLocSetter }) => {
 				X
 			</button>
 			<SearchBar onClick={handleSearchCities} />
-
-			{cities.length && !searching && <section>{buttonsToRender}</section>}
+			{!!cities.length && !searching && <section>{buttonsToRender}</section>}
 			{searching && <p className='searchingSnipet'>Searching cities...</p>}
 		</div>
 	);
